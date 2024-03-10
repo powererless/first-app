@@ -34,8 +34,6 @@
 
 //-----------------------------------
 
-let incr = 10, 
-	dincr = 10;
 
 //incr++; Если знак стоит до это префиксное значение, если после то постфиксное значение
 //dincr--; В консоль логе эти операторы работает только в префиксном значении!!!!
@@ -44,5 +42,20 @@ let incr = 10,
 // && - и, || - или, ! - отрицание 
 
 
-console.log(incr);
-console.log(dincr);
+
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	private: false
+};
+
+const a = prompt("Один из нескольких просмотренных фильмов?", " ");
+const b = prompt("На сколько оцените его?", "");
+
+personalMovieDB.movies[a] = b;
+
+console.log(personalMovieDB);
