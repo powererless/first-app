@@ -1,48 +1,6 @@
 "use strict";
 
 
-//const result = confirm("Is Everything OK?");
-//console.log(result);
-
-
-
-//const answer = +prompt("You have 18+?", "10");
-//console.log(answer + 5);
-
-
-
-//const answers = [];
-//
-//answers[0] = prompt("Как тебя зовут?", "");
-//answers[1] = prompt("Сколько тебе лет?", "");
-//
-//document.write(answers);
-
-//---------------------------
-
-//const cat = "mouse";
-//console.log(`https://blitz.com/${cat}/5`);
-
-//console.log("https://blitz.com/" + cat);
-
-//----------------------------------
-
-//const name = [];
-//name[0] = prompt("Как тебя зовут?"); 
-//alert(`Здравствуйте ${name}`);
-
-
-//-----------------------------------
-
-
-//incr++; Если знак стоит до это префиксное значение, если после то постфиксное значение
-//dincr--; В консоль логе эти операторы работает только в префиксном значении!!!!
-
-// Знак равенства (=) это присваивание!
-// && - и, || - или, ! - отрицание 
-
-
-
 const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
 const personalMovieDB = {
@@ -53,9 +11,31 @@ const personalMovieDB = {
 	private: false
 };
 
-const a = prompt("Один из нескольких просмотренных фильмов?", " ");
-const b = prompt("На сколько оцените его?", "");
+for(let i = 0; i < 1; i++) {
+	const a = prompt("Один из нескольких просмотренных фильмов?", " ");
+	const b = prompt("На сколько оцените его?", "");
 
-personalMovieDB.movies[a] = b;
+	if(a != null && b!= null && a != "" && b != "" && a.length < 50){
+		personalMovieDB.movies[a] = b;
+		console.log("Done");
+	} else {
+		console.log("Error");
+		i--;
+	}
+
+} 
+
+
+if (personalMovieDB.count < 10){
+	console.log("Вы просмотрели очень мало фильмов");
+} else if(personalMovieDB.count > 10 && personalMovieDB.count < 30) {
+	console.log("Вы классический зритель"); 
+} else if (personalMovieDB.count > 30) {
+	console.log("ВЫ КИНОМАН!");
+} else{
+	console.log("Error");
+}
 
 console.log(personalMovieDB);
+
+
